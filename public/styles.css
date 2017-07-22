@@ -9,3 +9,26 @@ body, html{
 #canvas {
    display: block;
 }
+
+.canvas_controls {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 1em 3em;
+    background-color: #ffd139;
+}
+
+.canvas_controls > button {
+    background-color: #2eaa50;
+    box-shadow: 0px 5px 0 #1f7537;
+    border: 0;
+    padding: .5em 1em;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #ffffff;
+    outline: none;
+}
+
+.canvas_controls > button:active {
+    box-shadow: 0px 3px 0 #1a612e;
+    transform: translateY(4px);
+}
