@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function() {
    canvas.onmousemove = function(e) {
       // normalize mouse position to range 0.0 - 1.0
       mouse.pos.x = e.clientX / width;
-      mouse.pos.y = e.clientY / height;
+      mouse.pos.y = (e.clientY - controlPanelHeight) / height;
       mouse.move = true;
    };
 
