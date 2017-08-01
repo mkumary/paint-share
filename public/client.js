@@ -11,11 +11,12 @@ document.addEventListener("DOMContentLoaded", function() {
    var context = canvas.getContext('2d');
    var width   = window.innerWidth;
    var height  = window.innerHeight;
+   var controlPanelHeight = document.getElementsByClassName('canvas_controls')[0].offsetHeight;
    var socket  = io.connect();
 
    // set canvas to full browser width/height
    canvas.width = width;
-   canvas.height = height;
+   canvas.height = height - controlPanelHeight;
 
    // register mouse event handlers
    canvas.onmousedown = function(e){ mouse.click = true; };
@@ -24,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function() {
    canvas.onmousemove = function(e) {
       // normalize mouse position to range 0.0 - 1.0
       mouse.pos.x = e.clientX / width;
-      mouse.pos.y = e.clientY / height;
+      mouse.pos.y = (e.clientY - controlPanelHeight) / height;
       mouse.move = true;
    };
 
